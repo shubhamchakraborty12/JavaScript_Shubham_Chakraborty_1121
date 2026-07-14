@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Admission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Iron Pulse Gym Admission</h2>
+        <form id="gymForm" novalidate>
+            
+            <!-- Full Name -->
+            <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="John Doe">
+                <span class="error-msg" id="nameError"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com">
+                <span class="error-msg" id="emailError"></span>
+            </div>
+
+            <!-- Age -->
+            <div class="input-group">
+                <label for="age">Age (Must be 16+)</label>
+                <input type="number" id="age" placeholder="25">
+                <span class="error-msg" id="ageError"></span>
+            </div>
+
+            <!-- Membership Plan -->
+            <div class="input-group">
+                <label for="plan">Membership Plan</label>
+                <select id="plan">
+                    <option value="">Select a plan...</option>
+                    <option value="basic">Basic (Gym Only)</option>
+                    <option value="premium">Premium (Gym + Pool)</option>
+                    <option value="elite">Elite (Personal Trainer)</option>
+                </select>
+                <span class="error-msg" id="planError"></span>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
