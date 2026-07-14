@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Integration Demo</title>
+    
+    <!-- INTERNAL JAVASCRIPT -->
+    <script>
+        // Runs immediately when the HTML head is parsed
+        console.log("Internal script in <head> executed.");
+
+        // Function to display static user info using DOM manipulation
+        function showUserInfo() {
+            const age = 25;
+            const role = "Developer";
+            
+            document.getElementById("user-age").textContent = age;
+            document.getElementById("user-role").textContent = role;
+            
+            // Console method demonstrating object logging
+            console.dir({age: age, role: role});
+        }
+
+        // Run the function automatically after the page loads
+        window.onload = function() {
+            showUserInfo();
+            console.time("Page Session Duration"); // Starts a timer in the console
+        };
+    </script>
+</head>
+<body>
+
+    <h1>User Dashboard</h1>
+    
+    <!-- Welcome Message Target -->
+    <h2 id="welcome-message">Welcome, Guest!</h2>
+
+    <!-- User Info Display -->
+    <div id="user-info">
+        <p><strong>Age:</strong> <span id="user-age">Loading...</span></p>
+        <p><strong>Role:</strong> <span id="user-role">Loading...</span></p>
+    </div>
+
+    <!-- INLINE JAVASCRIPT -->
+    <!-- Triggering external function via inline onclick attribute -->
+    <button onclick="displayWelcome(); console.count('Welcome Button Clicked');">
+        Set Username
+    </button>
+
+    <!-- Triggering a direct console method inline -->
+    <button onclick="console.timeEnd('Page Session Duration');">
+        End Session Timer
+    </button>
+
+    <!-- EXTERNAL JAVASCRIPT LINK -->
+    <script src="script.js"></script>
+</body>
+</html>
